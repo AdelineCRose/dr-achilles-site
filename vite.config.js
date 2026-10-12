@@ -1,7 +1,13 @@
 import {defineConfig} from "vite"
+import {resolve} from "path"
 
 export default defineConfig({
-	plugins: [
-		
-	]
+	build: {
+		rollupOptions: {
+			input: {
+				main: resolve(_dirname, 'index.html'),
+				achilles: resolve(_dirname, 'achilles.html')
+			}
+		}
+	}
 })
